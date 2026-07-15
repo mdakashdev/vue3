@@ -6,6 +6,10 @@
 - Parent component থেকে data receive করছে। defineProps
 - props, project setup and ts implement
 
+- project setup with typescript
+- create component
+- props receive using types
+
 ```
 Project setup with TypeScript:
 Follow: vue docs - https://vuejs.org/guide/quick-start.html
@@ -47,6 +51,7 @@ const props = defineProps<Props>();
 - separate folder for types
 
 3. Props
+props recv korbo using props type
 
 
 

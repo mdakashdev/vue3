@@ -1,21 +1,32 @@
 <script setup lang="ts">
-const name: string = "hello";
-interface Test {
-
-}
-const props = defineProps({
-  label: String,
+interface Props {
+  label: string,
+  placeholder?: string,
+  disabled?: boolean,
+  required?: boolean,
+  readonly?: boolean,
   type: 'text' | 'number' | 'email' | 'search',
-  placeholder: String,
-  disabled: Boolean,
-  required: Boolean,
-  readonly: Boolean
+}
+
+withDefaults(defineProps<Props>(), {
+  type: 'text',
+  placeholder: '',
+  disabled: false,
+  required: false,
+  readonly: false,
 });
+
 </script>
 <template>
 <div>
   <label>{{ label }}</label>
-  <input :type="type" :placeholder="placeholder" :disabled="disabled" :required="required" :readonly="readonly">
+  <input
+    :type="type"
+    :placeholder="placeholder"
+    :disabled="disabled"
+    :required="required"
+    :readonly="readonly"
+  />
 </div>
 </template>
 <style scoped>
