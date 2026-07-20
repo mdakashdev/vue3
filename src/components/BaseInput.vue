@@ -1,5 +1,6 @@
 <script setup lang="ts">
 interface Props {
+  modelValue: string,
   label: string,
   placeholder?: string,
   disabled?: boolean,
@@ -16,6 +17,10 @@ withDefaults(defineProps<Props>(), {
   readonly: false,
 });
 
+const emit = defineEmits<{
+  (e: "update:modelValue", value: string): void
+}>();
+
 </script>
 <template>
 <div>
@@ -26,6 +31,8 @@ withDefaults(defineProps<Props>(), {
     :disabled="disabled"
     :required="required"
     :readonly="readonly"
+    :value="modelValue"
+    @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
   />
 </div>
 </template>

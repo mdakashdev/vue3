@@ -3,6 +3,7 @@
 - type er jonno akta alada folder banabo
 - project setup with ts, component creat, define props and type interface use korbo others project a
 - v-model niye kaj korbo
+- emit niye jante hobe
 
 
 ## 20-07-2026
@@ -27,8 +28,46 @@
   @input="name = $event.target.value"
 />
 ```
+---
+
+> always kono kichu korte hole, age native element ke consider a niye asbe, actually jei kaj ta korbo seita, html element a kivabe hoi them implement korbe
+
+### Custom Component-এর ক্ষেত্রে
+
+```vue
+<MyInput v-model="username" />
+```
+
+এটি Vue নিচের মতো করে পরিবর্তন করে:
+
+```vue
+<MyInput
+  :modelValue="username"
+  @update:modelValue="username = $event"
+/>
+```
+
+তাই custom component-এ `v-model` ব্যবহার করতে হলে `modelValue` prop এবং `update:modelValue` event থাকতে হয়।
 
 ---
+
+### সংক্ষেপে
+
+`v-model` ব্যবহার করি কারণ এটি:
+
+* Two-way data binding করে।
+* কোড কম লিখতে হয়।
+* Form handling সহজ করে।
+* UI এবং data সবসময় sync রাখে।
+* Custom component-এ parent ও child-এর মধ্যে value আদান-প্রদান সহজ করে।
+
+**মনে রাখার সহজ নিয়ম:**
+
+* `:value` → Data দেখায়।
+* `@input` → Data পরিবর্তন করে।
+* `v-model` → এই দুইটি কাজ একসাথে করে।
+
+
 
 
 ## 15-07-2026
