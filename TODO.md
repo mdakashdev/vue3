@@ -1,5 +1,35 @@
 ## Tomorrow / Next 
 - TypeSctipt Implement korbo
+- type er jonno akta alada folder banabo
+- project setup with ts, component creat, define props and type interface use korbo others project a
+- v-model niye kaj korbo
+
+
+## 20-07-2026
+
+> v-model : two-way binding
+
+`v-model` হলো Vue-এর একটি directive, যা **two-way data binding** করার জন্য ব্যবহার করা হয়। অর্থাৎ, UI (যেমন input) এবং JavaScript-এর data একে অপরের সাথে স্বয়ংক্রিয়ভাবে sync থাকে।
+
+### `v-model` কেন ব্যবহার করি?
+
+### কীভাবে কাজ করে?
+
+```vue
+<input v-model="name">
+```
+
+এটি আসলে নিচের কোডের সংক্ষিপ্ত রূপ:
+
+```vue
+<input
+  :value="name"
+  @input="name = $event.target.value"
+/>
+```
+
+---
+
 
 ## 15-07-2026
 - project name: vue 3 using composition api
