@@ -14,6 +14,11 @@ const username = ref('');
     <!-- manual - without v-model-->
     <input type="text" :value="name" @input="name = $event.target.value" />
 
+<!--    check event fire and log event-->
+    <input type="text" :value="name" @input="console.log($event.target.value)" />
+<!--    which element theke asche: like - input, $event.target  after that pick the value-->
+    <input type="text" :value="name" @input="console.log($event.target)" />
+
 <!--using v-model in custom component-->
     <BaseInput
       v-model="username"

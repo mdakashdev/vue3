@@ -8,6 +8,71 @@
 
 ## 20-07-2026
 
+- v-model শুধু input field-এর value ধরার জন্য নয়, বরং UI এবং JavaScript-এর data-কে দুই দিক থেকে (two-way) sync রাখার জন্য ব্যবহার করা হয়।
+
+- Example: 
+যখন তুমি input-এ লিখবে:
+
+```
+Hello
+```
+
+তখন:
+
+```js
+name.value = "Hello";
+```
+
+আবার যদি JavaScript থেকে করো:
+
+```js
+name.value = "Hasan";
+```
+
+তাহলে input-এ স্বয়ংক্রিয়ভাবে **Hasan** দেখাবে।
+
+অর্থাৎ sync দুই দিকেই হয়।
+
+```text
+Input  ─────────► ref(name)
+  ▲                  │
+  │                  ▼
+  ◄───────────────────
+```
+
+### Custom Component-এর ক্ষেত্রেও একই
+
+```vue
+<BaseInput v-model="username" />
+```
+এখানে `v-model`-এর কাজ:
+
+* Parent-এর `username` → Child-তে পাঠানো।
+* Child-এ user কিছু লিখলে → Parent-এর `username` update করা।
+
+---
+
+মনে রাখার সহজ নিয়ম
+- @input → User কিছু লিখেছে।
+- $event.target.value → User কী লিখেছে সেটা বের করো।
+- emit("update:modelValue", value) → সেই value Parent-কে পাঠিয়ে দাও।
+
+```
+parent a,
+<BaseInput v-model="username" /> eitar equivalent hocche 
+<BaseInput
+  :modelValue="username"
+  @update:modelValue="username = $event"
+/>
+
+orthar @update:modelValue eita diye emit dhorche and update korteche.
+
+তাই মনে রাখো
+✅ Parent → Child: modelValue prop দিয়ে value যায়।
+✅ Child → Parent: emit("update:modelValue", value) দিয়ে update যায়।
+```
+---
+
 > v-model : two-way binding
 
 `v-model` হলো Vue-এর একটি directive, যা **two-way data binding** করার জন্য ব্যবহার করা হয়। অর্থাৎ, UI (যেমন input) এবং JavaScript-এর data একে অপরের সাথে স্বয়ংক্রিয়ভাবে sync থাকে।

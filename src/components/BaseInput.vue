@@ -21,6 +21,11 @@ const emit = defineEmits<{
   (e: "update:modelValue", value: string): void
 }>();
 
+/**
+ * Native HTML = attribute and event
+ * Event: @input
+ * attribute: value, type, placeholder, disabled, required, readonly
+ */
 </script>
 <template>
 <div>
