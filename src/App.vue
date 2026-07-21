@@ -7,6 +7,13 @@ const username = ref('');
 </script>
 
 <template>
+
+  <router-view />
+
+  <router-link to="/">Home</router-link>
+  <router-link to="/about">About</router-link>
+
+
   <div>
 <!--    using v-model-->
     <input type="text" v-model="name" placeholder="enter name" />
