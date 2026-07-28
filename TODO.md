@@ -1,111 +1,65 @@
-## Tomorrow / Next 
-- TypeSctipt Implement korbo
-- type er jonno akta alada folder banabo
-- project setup with ts, component creat, define props and type interface use korbo others project a
-- v-model niye kaj korbo
-- emit niye jante hobe
+# VUE 3
+
+## Global Note 
+
+1. Setup : 
+   In general think koro, ami kichui jani na about vue; but project create korte pari, sei project a ki folder, ki file ache seta o jani na
+   seta initial amar janar need nai. project setup er  jonno vue docs follow korlei install kora jai and akta perfect Scaffolding pabo.
+   enough!
+2. Re-usable component
+    se jonno easy way hocche- html element tag use ke follow kora. like ami input component develop korte cai tobe -
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input ekhane sob attribut ache, eita dekhe dekhe kora jai.
+3. like - <input type="text" name="name" /> eita jodi follow kori tobe hoi - <input :type="type" :name="name" />
+
+# Application ready guideline
+
+## 1. Build Vue App
+
+- Project setup with TypeScript:
+- Follow: vue docs - https://vuejs.org/guide/quick-start.html
+- Install Node.js version ^22.18.0 || >=24.12.0
+- pnpm create vue@latest
+- note: ready hobar kono kichu dekhar dorkar nai, just dekhbo scafolding paichi and run hocche
+
+## 2. Create Component
+
+- kono kichu na vebei akta component create kore then seta ke akta page / main page import kore output dekha.
+- src er vitor components folder er vitor.
+- Component Doc: https://vuejs.org/guide/essentials/component-basics.html
+- akta reusable component banate hole, native html element korlei hoi tahole easy develop kora jai.
+- component registration / direct uses - ami cai component ta use korbo tobe, je kono page a jeye or component a jeye import kore use kora jai.
 
 
-## 21 July 2026
-- Routing 
+## 3. Props passing and rcv
+
+- parent compnent theke props name diye pass korte hoi - like type="text" 
+- child compoent a props recv korar jonno defineProps korte hoi
+- aar typeSctipt er jonno interface diye props rcv kore defineProps a pass kore dilei hoi
+- mane - props receive using types
+- props niye @doc/prop.md te likha ache
+
+## 4. Emit
+
+- child theke parent a data rccv korar jonno - emit use kori
+- emit niye @docs/emit.md te likha ache
+
+## 5. v-model - Two way binding
+
+- mane 2 dike thekei data update hobe, parent theke child and child theke parent.
+- vue te easyliy kora jai v-model diye
+- tow way niye bistarito deya ache @doc/tow-way-binding.md te.
 
 
-## 15-07-2026
-- project name: vue 3 using composition api
-- Parent component থেকে data receive করছে। defineProps
-- props, project setup and ts implement
+## 6. Routing
 
-- project setup with typescript
-- create component
-- props receive using types
-
-```
-Project setup with TypeScript:
-Follow: vue docs - https://vuejs.org/guide/quick-start.html
-Install Node.js version ^22.18.0 || >=24.12.0
-pnpm create vue@latest
-```
-
-1. Setup
-In general think koro, ami kichui jani na about vue; but project create korte pari, sei project a ki folder, ki file ache seta o jani na
-seta initial amar janar need nai. project setup er  jonno vue docs follow korlei install kora jai and akta perfect Scaffolding pabo. 
-enough!
-
-2. TS
-TypeScript or without TypeScript
-ami jodi TS install kori tobe - tobe assign value string er jaigai number dei tobe error dekhabe and inside component er vitor
-interface likhte parbo, sei interface ke type hisabe use korte parbo. 
-
-but without TS ei gulo korte parbo na 
-```Exp1
-const name = "John";
-name = 123;
-```
-
-```Exp2
-let name: string = "John";
-name = 123;
-
-interface Props {
-  title: string;
-  count?: number;
-}
-const props = defineProps<Props>();
-
-<MyComponent title="Hello" count="abc" /> দিলে TypeScript error দেখাবে, কারণ count number হওয়া উচিত।
-```
-
-- typescript install (existing project);  existing project a install / migrate kora ektu kothin, tai initial project ke ts soho koro 
-- aar jodi existing project big hoi, tobe ts soho project init kore, then component gulo dhire dhire ekhane niye aso (migrate)
-- separate folder for types
-
-3. Props
-props recv korbo using props type
+- route er jonno `vue-router` install korte hobe
+- router akta folder create kore, sekhane route create korte hobe form vue-router
+- then app.vue / main a router-view use korlei pauwa jabe, then url/page-name use korlei hobe
 
 
 
-### 13-07-2026
+# Feature Topics
 
-### 09-07-2026
-
-Done:
-- ✓ Created BaseInput component
-- ✓ Used Props
-
-Next:
-- BaseInput a jei pattern a props recv korechi, seta ki pattern, eikhane aar onno perfect ki patter use kora jai.
-- TypeScript implement korte cai.
-- vue 3 te Page (routing) implement korte hobe.
-- css (design) implement korte hobe
-- 
-
-### Others
-
-```text
-Stack International Bangladesh 
-React + Next.js	45–55%	50–60%	
-Angular	15–20%	12–18%	
-Vue.js + Nuxt	10–15%	10–15%	
-```
-
-
-React er framework next 
-Vue er framework nuxt
-
-
-ami Jodi stencil diye kono package / library banai seta ki , vue(nuxt), react(next) and angular a use korte parbo ?
-হ্যাঁ, পারবে। আসলে Stencil.js-এর সবচেয়ে বড় সুবিধাই এটি।
-Stencil দিয়ে যদি একটি component library/package বানাও, তাহলে সেটা:
-
-✅ React (Next.js)
-✅ Vue (Nuxt)
-✅ Angular
-✅ Svelte
-✅ Astro
-✅ এমনকি Plain HTML/JavaScript
-—সব জায়গায় ব্যবহার করা যায়।
-
-যদি npm UI Library বানাতে চাও
-Ranking:
-🥇 Stencil.js
-🥈 Lit
+## LATER 
+- Component Register
+- Type separate folder 
