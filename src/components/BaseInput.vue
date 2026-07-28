@@ -20,6 +20,21 @@ withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
   (e: "update:modelValue", value: string): void
 }>();
+// const emit = defineEmits();
+
+// emit('sayHello', 'Akash'); ei vabe call na kore, sorasori defineEmits() er vitor eirokom method and value pass korte pari?
+
+//emit holo akta function tai amra eivabe call korte pari
+//1st param - event/method name, 2nd one value
+// console.log(typeof emit);
+
+// function test(event: Event) {
+//   const value = (event.target as HTMLInputElement).value;
+//   console.log(value)
+//   emit('sayHello', 'Akash');
+//   //emit('update:modelValue', value);
+// }
+//@input="test($event)"
 
 /**
  * Native HTML = attribute and event
@@ -39,6 +54,8 @@ const emit = defineEmits<{
     :value="modelValue"
     @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
   />
+<!--  @input="console.log('test')"-->
+<!--  emit('update:modelValue', 'A')-->
 </div>
 </template>
 <style scoped>

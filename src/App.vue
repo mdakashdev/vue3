@@ -4,6 +4,10 @@ import BaseInput from "@/components/BaseInput.vue";
 
 const name = ref('');
 const username = ref('');
+
+function handleMethod(data) {
+  console.log('hello', data);
+}
 </script>
 
 <template>
@@ -33,6 +37,7 @@ const username = ref('');
       type="text"
       placeholder="Enter your name"
       />
+    <h1>val: {{username}}</h1>
   </div>
 </template>
 

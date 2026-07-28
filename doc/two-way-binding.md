@@ -142,15 +142,7 @@ User লিখছে
 অর্থাৎ
 
 ```
-Child
-
-↓
-
-emit
-
-↓
-
-Parent
+Child -> emit -> Parent
 ```
 
 Event যাচ্ছে
