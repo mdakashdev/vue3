@@ -36,7 +36,11 @@ function handleMethod(data) {
       label="Name"
       type="text"
       placeholder="Enter your name"
-      />
+      >
+      <h1>This is inside base-input</h1>
+      <template #header><h1>name</h1></template>
+    </BaseInput>
+
     <h1>val: {{username}}</h1>
   </div>
 </template>

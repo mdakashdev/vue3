@@ -54,6 +54,8 @@ const emit = defineEmits<{
     :value="modelValue"
     @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
   />
+  <slot name="header"></slot>
+  <slot></slot>
 <!--  @input="console.log('test')"-->
 <!--  emit('update:modelValue', 'A')-->
 </div>
