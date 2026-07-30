@@ -56,6 +56,12 @@
 - router akta folder create kore, sekhane route create korte hobe form vue-router
 - then app.vue / main a router-view use korlei pauwa jabe, then url/page-name use korlei hobe
 
+## 7. State Management
+
+pnpm install pinia 
+stores folder er vitore
+register pinia in application 
+
 
 
 # Feature Topics

@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import BaseInput from "@/components/BaseInput.vue";
+import { useCounterStore } from "@/stores/counter.ts";
+
+const counter = useCounterStore(); //method alada vabe destrucute korte hoi.
 
 const name = ref('');
 const username = ref('');
@@ -8,6 +11,7 @@ const username = ref('');
 function handleMethod(data) {
   console.log('hello', data);
 }
+
 </script>
 
 <template>
@@ -19,16 +23,18 @@ function handleMethod(data) {
 
 
   <div>
+    <h1>{{ counter.count }}</h1>
+    <button @click="counter.increment()">Increment</button>
 <!--    using v-model-->
-    <input type="text" v-model="name" placeholder="enter name" />
+<!--    <input type="text" v-model="name" placeholder="enter name" />-->
 
     <!-- manual - without v-model-->
-    <input type="text" :value="name" @input="name = $event.target.value" />
+<!--    <input type="text" :value="name" @input="name = $event.target.value" />-->
 
 <!--    check event fire and log event-->
-    <input type="text" :value="name" @input="console.log($event.target.value)" />
+<!--    <input type="text" :value="name" @input="console.log($event.target.value)" />-->
 <!--    which element theke asche: like - input, $event.target  after that pick the value-->
-    <input type="text" :value="name" @input="console.log($event.target)" />
+<!--    <input type="text" :value="name" @input="console.log($event.target)" />-->
 
 <!--using v-model in custom component-->
     <BaseInput
