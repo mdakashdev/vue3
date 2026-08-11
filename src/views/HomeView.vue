@@ -1,7 +1,15 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import { useStateStore } from '../stores/state.ts'
 
-const { count, component } = useStateStore();
+const store = useStateStore();
+
+const {
+  count,
+  component
+} = storeToRefs(store);
+
+const { customName, increment, decrement } = store;
 </script>
 
 <template>
@@ -9,6 +17,11 @@ const { count, component } = useStateStore();
   <h1>Home page11</h1>
   <p>count: {{ count }}</p>
   <p>component: {{ component }}</p>
+  <button @click="customName('checkbox component')">click</button>
+  <div>
+    <button @click="increment(1)">+</button>
+    <button @click="decrement(1)">-</button>
+  </div>
 </div>
 </template>
 

@@ -32,5 +32,5 @@
 3. Export store in any component or pages --> `done`
 4. Use store / read state in multiple component --> `done`
 5. Update state using Actions / Methods - so define method in store; like - `increment and decrement` --> `done`
-6. Using computed / getter / selector --> `done`
+6. Using computed / getter / selector --> `pending`
 
