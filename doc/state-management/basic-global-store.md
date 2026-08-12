@@ -18,7 +18,7 @@
 - Import `defineStore` from pinia and using `defineStore` 
 - for state using ref, import form vue
 
-## Registration
+## Registration & create state
 - Import the store into the component where you want to use it.
 - Destructure the required states and use the template.
 - Example: `create-state.md`
