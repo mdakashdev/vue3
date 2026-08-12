@@ -51,5 +51,6 @@ const { customName } = store;
 ```
 
 - jehetu customName diye store a update korbo, so reactive rakte hobe state gulo
-- se jonno storeToRefs use kore state gulo ke destruct kore nite hobe
+- se jonno `storeToRefs` use kore state gulo ke destruct kore nite hobe
 - aar method ke storeToRefs korar dorkar nai.
+- `Note` - getter/computed-এর জন্য reactive value pabar jonno - storeToRef use kora.
