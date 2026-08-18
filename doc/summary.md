@@ -1,14 +1,14 @@
 # VUE 3
 
-## Global Note 
+## Global Note
 
-1. Setup : 
+1. Setup :
    In general think koro, ami kichui jani na about vue; but project create korte pari, sei project a ki folder, ki file ache seta o jani na
    seta initial amar janar need nai. project setup er  jonno vue docs follow korlei install kora jai and akta perfect Scaffolding pabo.
    enough!
 2. Re-usable component
-    se jonno easy way hocche- html element tag use ke follow kora. like ami input component develop korte cai tobe -
-    https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input ekhane sob attribut ache, eita dekhe dekhe kora jai.
+   se jonno easy way hocche- html element tag use ke follow kora. like ami input component develop korte cai tobe -
+   https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input ekhane sob attribut ache, eita dekhe dekhe kora jai.
 3. like - <input type="text" name="name" /> eita jodi follow kori tobe hoi - <input :type="type" :name="name" />
 
 # Application ready guideline
@@ -31,7 +31,7 @@
 
 ## 3. Props passing and rcv
 
-- parent compnent theke props name diye pass korte hoi - like type="text" 
+- parent compnent theke props name diye pass korte hoi - like type="text"
 - child compoent a props recv korar jonno defineProps korte hoi
 - aar typeSctipt er jonno interface diye props rcv kore defineProps a pass kore dilei hoi
 - mane - props receive using types
@@ -56,14 +56,14 @@
 
 ## 7. State Management
 
-pnpm install pinia 
+pnpm install pinia
 stores folder er vitore
-register pinia in application 
+register pinia in application
 
 
 
 # Feature Topics
 
-## LATER 
+## LATER
 - Component Register
 - Type separate folder 
