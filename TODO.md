@@ -29,7 +29,6 @@
 - akta reusable component banate hole, native html element korlei hoi tahole easy develop kora jai.
 - component registration / direct uses - ami cai component ta use korbo tobe, je kono page a jeye or component a jeye import kore use kora jai.
 
-
 ## 3. Props passing and rcv
 
 - parent compnent theke props name diye pass korte hoi - like type="text" 
@@ -48,7 +47,6 @@
 - mane 2 dike thekei data update hobe, parent theke child and child theke parent.
 - vue te easyliy kora jai v-model diye
 - tow way niye bistarito deya ache @doc/tow-way-binding.md te.
-
 
 ## 6. Routing
 
