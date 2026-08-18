@@ -60,6 +60,25 @@ pnpm install pinia
 stores folder er vitore
 register pinia in application
 
+## 8. HTTP Client (fetch(), HttpClient, Axios, TanStack Query )
+
+- api call korar jonno `official` http client hocche - fetch() and HttpClient
+- official alternative hocche - Axios and TanStack Query
+- TanStack Query এটা আসলে HTTP client না; API data fetching/caching/`server-state management`-এর জন্য।
+
+- http client use kora hoi - data neya deyar jonno
+- client hocche - fetch(), http-client, axios and tanstack query
+- tahole client install korte hobe then configure after thar use korte hobe
+- folder strcutre or data neya and deyar jonno proven architecure use kori, dui dhoroner 1. small app 2. Large app
+- small app: Component > Service
+- large app: components > composables (reusable logic) > stores (state management) > services (api layer bola hoi)
+- `1st service` a userService.ts using client `axios`
+    - then `2nd store` userStore.ts a service use korbe
+    - then `3rd a composables` useUsers and
+    - last `4th components` UserList.vue
+
+
+## 9. API Integration
 
 
 # Feature Topics
@@ -67,3 +86,16 @@ register pinia in application
 ## LATER
 - Component Register
 - Type separate folder 
+
+
+---
+
+# question about http client
+1. Frontend to Backend configure ta kivabe kore for api diye data neya and deya
+2. akta application theke arekta application er sathe kivabe connect kore with api, actually ei related work gulo kivabe hoi
+3. data neya and deyar bisoy a security kon dik kheyal korte hoi.
+
+
+5. api diye data neya and deyar jonno vue te composable use kore ? naki onno way te kore? eitai ki Service / API layer ?
+6. flow ki -> composable data niye asbe then store a store korbe then component a dekhabe (composable -> store -> component)
+
