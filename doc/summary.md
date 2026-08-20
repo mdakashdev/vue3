@@ -68,7 +68,7 @@ register pinia in application
 
 - http client use kora hoi - data neya deyar jonno
 - client hocche - fetch(), http-client, axios and tanstack query
-- tahole client install korte hobe then configure after thar use korte hobe
+- tahole client install korte hobe then configure (1. axios register in component and uses 2. Axios-এর central configuration) after thar use korte hobe
 - folder strcutre or data neya and deyar jonno proven architecure use kori, dui dhoroner 1. small app 2. Large app
 - small app: Component > Service
 - large app: components > composables (reusable logic) > stores (state management) > services (api layer bola hoi)
@@ -76,6 +76,39 @@ register pinia in application
     - then `2nd store` userStore.ts a service use korbe
     - then `3rd a composables` useUsers and
     - last `4th components` UserList.vue
+
+
+### axios install and register
+
+1. install
+2. central config
+3. feature/module onjuai page
+4. use in component or anywhere
+
+
+- https://axios.rest/pages/getting-started/first-steps
+- `pnpm install axios`
+- central configuration -> create-an-instance
+- https://axios.rest/pages/advanced/create-an-instance.html
+- 
+
+
+2 ta bisoy - 1. axios register in component and uses 2. Axios-এর central configuration
+
+`axios.ts` = **Axios-এর central configuration**
+ এখানে পরে তুমি common জিনিস রাখতে পারো: baseURL, Authorization token, interceptors, error handling, timeout
+
+### baseURL, Authorization token, interceptors, error handling, timeout
+
+- common error kivabe handle kore?
+- interceptor ki kore?
+
+
+## Aug 20
+
+- central config niye kaj kori
+
+
 
 
 ## 9. API Integration
