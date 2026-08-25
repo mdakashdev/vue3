@@ -107,6 +107,7 @@ register pinia in application
 ## Aug 20
 
 - central config niye kaj kori
+- 
 
 
 
@@ -119,6 +120,7 @@ register pinia in application
 ## LATER
 - Component Register
 - Type separate folder 
+- common error handle
 
 
 ---

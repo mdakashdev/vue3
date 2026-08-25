@@ -1,3 +1,70 @@
+# central config
+
+- instance create then sei instance dhore method gulo dhorte hobe.
+- তাই api.get() মানে Axios-এর ওই configured instance ব্যবহার করে GET request করা।
+
+## interceptor
+
+- Interceptor দিয়ে Axios request/response যাওয়ার আগে বা আসার পরে automatically কিছু কাজ করা হয়।
+- backend theke response asar por, api.interceptors.response ei modhe diye asbe.
+- request jabar age , api,interceptors.request ei moddhe diye jai. je kono kichu add korte pari.
+
+
+## global Error handle
+
+হ্যাঁ, **এই `axios.ts`-এর response interceptor-এ common/global API error handling করা যায়।** ✅
+
+```ts
+api.interceptors.response.use(
+  (response) => response,
+
+  (error) => {
+    if (error.response?.status === 401) {
+      // unauthorized
+    }
+
+    if (error.response?.status === 500) {
+      // server error
+    }
+
+    return Promise.reject(error)
+  }
+)
+```
+
+তাহলে:
+
+```text
+যেকোনো Component
+      ↓
+API call
+      ↓
+axios.ts
+      ↓
+Response Interceptor
+      ↓
+Common Error Handling
+```
+
+তবে **সব error এখানেই handle করতে হবে না**।
+
+যেমন:
+
+* `401` → global handling করা যায়
+* `500` → global notification করা যায়
+* `network error` → global handling করা যায়
+* `422 validation error` → নির্দিষ্ট form/component-এ দেখানো ভালো
+
+অর্থাৎ **common/global error → interceptor**, আর **specific business/UI error → component/composable layer**।
+
+
+
+
+
+
+
+
+
 # summary
 
 after install, axios component a import kore then use kora jai like
@@ -8,13 +75,22 @@ const response = await axios.get('/api/users')
 console.log(response.data)
 ```
 
-amar user er list lagbe, so ami easily component a axios import kore then use korte pari,
-jodi emon hoi 10 ta component a lagbe, tahole axios.get() sob component a call korbo.
+kintu amar user er list lagbe, so ami easily component a axios import kore then use korte pari,
+jodi emon hoi 10 ta component a lagbe, tahole `axios.get()` sob component a call korte hobe.
 
 
 - 10 component jeno call korte na hoi তাই Service/API Layer বানানো হয়
 - Component শুধু বলবে: const response = await getUsers(), `getUsers()` কীভাবে API call করছে সেটা Component জানবে না।
 - সাধারণত feature/domain অনুযায়ী API file আলাদা করা হয়। like - userApi.ts, productApi.ts
+
+
+# Solution 
+
+`api/` or `service/` name folder neya then `central config` and `feature/module` onujai kaj gulo kora.
+
+- api or service jei name hok na keno - eita ke amra api layer boli
+- vue er khetre apra `api/` folder use korbo, ekhane sob api related kaj
+
 
 ```text
 // userApi.ts

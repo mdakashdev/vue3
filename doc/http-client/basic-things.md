@@ -2,7 +2,7 @@
 
 - http client use kora hoi - data neya deyar jonno 
 - client hocche - fetch(), http-client, axios and tanstack query
-- tahole client install korte hobe then configure after thar use korte hobe
+- tahole client install korte hobe then configure (1. axios register in component and uses 2. Axios-এর central configuration) after thar use korte hobe
 - folder strcutre or data neya and deyar jonno proven architecure use kori, dui dhoroner 1. small app 2. Large app
 - small app: Component > Service
 - large app: components > composables (reusable logic) > stores (state management) > services (api layer bola hoi)
