@@ -63,13 +63,13 @@ register pinia in application
 ## 8. HTTP Client (fetch(), HttpClient, Axios, TanStack Query )
 
 - api call korar jonno `official` http client hocche - fetch() and HttpClient
-- official alternative hocche - Axios and TanStack Query
+- official alternative hocche - `Axios` and `TanStack Query`
 - TanStack Query এটা আসলে HTTP client না; API data fetching/caching/`server-state management`-এর জন্য।
 
 - http client use kora hoi - data neya deyar jonno
 - client hocche - fetch(), http-client, axios and tanstack query
 - tahole client install korte hobe then configure (1. axios register in component and uses 2. Axios-এর central configuration) after thar use korte hobe
-- folder strcutre or data neya and deyar jonno proven architecure use kori, dui dhoroner 1. small app 2. Large app
+- folder strcuture or data neya and deyar jonno proven architecure use kori, dui dhoroner 1. small app 2. Large app
 - small app: Component > Service
 - large app: components > composables (reusable logic) > stores (state management) > services (api layer bola hoi)
 - `1st service` a userService.ts using client `axios`
@@ -92,6 +92,7 @@ register pinia in application
 - https://axios.rest/pages/advanced/create-an-instance.html
 - 
 
+ami bolte pari, api integration (done)
 
 2 ta bisoy - 1. axios register in component and uses 2. Axios-এর central configuration
 
@@ -103,16 +104,28 @@ register pinia in application
 - common error kivabe handle kore?
 - interceptor ki kore?
 
-
-## Aug 20
-
-- central config niye kaj kori
-- 
-
-
-
-
 ## 9. API Integration
+- Done, using axios
+
+## 10. API Integration
+
+### TanStack 
+
+- install tanstack `pnpm add @tanstack/vue-query`
+- https://tanstack.com/query/latest/docs/framework/vue/installation
+- App-এ TanStack Query configure, তাহলে application-এর মধ্যে TanStack Query available হবে।
+- Need composable, create composables 
+- queryKey: এই key ব্যবহার করে TanStack Query cache manage করবে।
+- getUsers: যখন users-এর data দরকার হবে, getUsers() call করো।
+- use in component
+
+**Axios বলে:**
+> "আমি Backend-এ HTTP request পাঠাব।"
+
+**TanStack Query বলে:**
+> "এই server data-টা আমি manage করব—loading, error, cache, refetch ইত্যাদি।"
+
+
 
 
 # Feature Topics
@@ -121,7 +134,9 @@ register pinia in application
 - Component Register
 - Type separate folder 
 - common error handle
-
+- Project-এর requirement অনুযায়ী CORS, refresh token, retry, caching ইত্যাদি পরে যোগ হতে পারে।
+- https://heyapi.dev/docs/openapi/typescript/clients/ofetch 
+- oFetch
 
 ---
 
@@ -129,8 +144,6 @@ register pinia in application
 1. Frontend to Backend configure ta kivabe kore for api diye data neya and deya
 2. akta application theke arekta application er sathe kivabe connect kore with api, actually ei related work gulo kivabe hoi
 3. data neya and deyar bisoy a security kon dik kheyal korte hoi.
-
-
 5. api diye data neya and deyar jonno vue te composable use kore ? naki onno way te kore? eitai ki Service / API layer ?
 6. flow ki -> composable data niye asbe then store a store korbe then component a dekhabe (composable -> store -> component)
 
