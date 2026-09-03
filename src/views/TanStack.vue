@@ -37,7 +37,7 @@ const {
 <template>
   <div>
     <div>
-      <h2>Users</h2>
+      <h2 class="font-bold">Users</h2>
 
       <p v-if="isLoading">Loading...</p>
 

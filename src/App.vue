@@ -15,17 +15,14 @@ function handleMethod(data) {
 </script>
 
 <template>
-
-  <router-view />
-
   <router-link to="/">Home</router-link>
   <router-link to="/about">About</router-link>
   <router-link to="/tan">Tan</router-link>
-
+  <router-link to="/login">Login</router-link>
 
   <div>
-    <h1>{{ counter.count }}</h1>
-    <button @click="counter.increment()">Increment</button>
+<!--    <h1>{{ counter.count }}</h1>-->
+<!--    <button @click="counter.increment()">Increment</button>-->
 <!--    using v-model-->
 <!--    <input type="text" v-model="name" placeholder="enter name" />-->
 
@@ -38,18 +35,19 @@ function handleMethod(data) {
 <!--    <input type="text" :value="name" @input="console.log($event.target)" />-->
 
 <!--using v-model in custom component-->
-    <BaseInput
-      v-model="username"
-      label="Name"
-      type="text"
-      placeholder="Enter your name"
-      >
-      <h1>This is inside base-input</h1>
-      <template #header><h1>name</h1></template>
-    </BaseInput>
+<!--    <BaseInput-->
+<!--      v-model="username"-->
+<!--      label="Name"-->
+<!--      type="text"-->
+<!--      placeholder="Enter your name"-->
+<!--      >-->
+<!--      <h1>This is inside base-input</h1>-->
+<!--      <template #header><h1>name</h1></template>-->
+<!--    </BaseInput>-->
 
-    <h1>val: {{username}}</h1>
+<!--    <h1>val: {{username}}</h1>-->
   </div>
+  <router-view />
 </template>
 
 <style scoped></style>

@@ -6,6 +6,7 @@ import {
 import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import TanStack from "@/views/TanStack.vue";
+import Login from "@/views/auth/Login.vue";
 
 
 const router = createRouter({
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/tan',
       name: 'tanstack',
       component: TanStack
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     }
   ]
 })
