@@ -1,3 +1,107 @@
+# concept
+
+- এটা project-এ shadcn-এর foundation/setup তৈরি করে। `pnpm dlx shadcn-vue@latest init`
+- যে component দরকার, সেটা add করবে - `pnpm dlx shadcn-vue@latest add button`
+
+    এটাই shadcn-এর একটা গুরুত্বপূর্ণ concept।
+
+    ধরো তোমার project-এ শুধু: Button, Input, Card লাগবে। তাহলে shadcn পুরো ৫০টা component project-এ ঢুকিয়ে দেবে না। তুমি যেগুলো দরকার শুধু সেগুলো নেবে |
+
+
+**Component-এর source code তোমার project-এ চলে আসে।**
+
+তাই পরে তুমি চাইলে `Button.vue` নিজের design অনুযায়ী modify করতে পারবে।
+
+---
+
+হ্যাঁ, **ঠিক তাই।** shadcn-vue প্রথমে install/init করার পর **প্রতিটা component আলাদাভাবে add করতে হয়।**
+
+## Flow টা এমন:
+
+**1. প্রথমে shadcn setup**
+
+```bash
+pnpm dlx shadcn-vue@latest init
+```
+
+এটা project-এ shadcn-এর foundation/setup তৈরি করে।
+
+তারপর:
+
+**2. যে component দরকার, সেটা add করবে**
+
+Button দরকার:
+
+```bash
+pnpm dlx shadcn-vue@latest add button
+```
+
+Input দরকার:
+
+```bash
+pnpm dlx shadcn-vue@latest add input
+```
+
+Card দরকার:
+
+```bash
+pnpm dlx shadcn-vue@latest add card
+```
+
+Dialog দরকার:
+
+```bash
+pnpm dlx shadcn-vue@latest add dialog
+```
+
+---
+
+### কেন আলাদা আলাদা?
+
+এটাই shadcn-এর একটা গুরুত্বপূর্ণ concept।
+
+ধরো তোমার project-এ শুধু:
+
+```text
+Button
+Input
+Card
+```
+
+লাগবে।
+
+তাহলে shadcn পুরো ৫০টা component project-এ ঢুকিয়ে দেবে না।
+
+তুমি যেগুলো দরকার শুধু সেগুলো নেবে:
+
+```text
+shadcn init
+     ↓
+project setup
+
+add button
+     ↓
+Button.vue
+
+add input
+     ↓
+Input.vue
+
+add card
+     ↓
+Card.vue
+```
+
+এবং সবচেয়ে গুরুত্বপূর্ণ:
+
+**Component-এর source code তোমার project-এ চলে আসে।**
+
+তাই পরে তুমি চাইলে `Button.vue` নিজের design অনুযায়ী modify করতে পারবে।
+
+এ কারণেই shadcn-কে traditional `"npm install করে component import"` library-এর মতো ভাবলে পুরো picture টা পাওয়া যায় না।
+
+
+
 # shadcn-vue
 
 after install we get 
@@ -172,4 +276,9 @@ Primary = #2563EB
 
 এরপর যে prompt আসবে সেটা পাঠাও।
 
+
+
+
+
+## add button component 
 
