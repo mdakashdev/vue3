@@ -35,7 +35,14 @@ const {
 </script>
 
 <template>
-  <div>
+  <div class="ml-10">
+    <button class="bg-blue-500 rounded-md px-4 py-2">
+      Save
+    </button>
+    <br>
+    <button class="bg-primary text-white rounded-md px-4 py-2 mt-5">
+      Save
+    </button>
     <div>
       <h2 class="font-bold">Users</h2>
 

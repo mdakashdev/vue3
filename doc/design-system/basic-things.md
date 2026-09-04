@@ -12,11 +12,16 @@ akta sketch / figma example niye sob gulo dhap korbe.
 Goal হলো consistency
 
 - sketch pabar por, 
-- First, `design language` ber korbo like -` Colors` (Primary, Secondary), (Primary #2563EB; Background #FFFFFF -> ei gulor design token hote pare)
-- Second, `Typography` ber korbe (Font Family, Heading, Body) (H1: 32px / 700, Body: 16px / 400)
-- Third, `Spacing` system বুঝবে - ধরো Figma-তে বারবার দেখলে: 4px, 8px, 12px, 16px, etc তাহলে বুঝবে design একটা spacing system follow করছে।
-- 
-- Fourth, `theme create` korbe - Professional project-এ সাধারণত design values centralized রাখার চেষ্টা করা হয়।
+- First, `Design Language` 
+- ` Colors` (Primary, Secondary), (Primary #2563EB; Background #FFFFFF -> ei gulor design token hote pare)
+- `Typography` ber korbe (Font Family, Heading, Body) (H1: 32px / 700, Body: 16px / 400)
+- `Spacing` system বুঝবে - ধরো Figma-তে বারবার দেখলে: 4px, 8px, 12px, 16px, etc তাহলে বুঝবে design একটা spacing system follow করছে।
+
+- Second, `Tokens`
+
+- Third, `theme create` korbe 
+- Professional project-এ সাধারণত design values centralized রাখার চেষ্টা করা হয়।
+
 - Fifth, Base UI Components like - button, input, select, etc ei gulo business logic lage na, eigulo small reusable UI components.
     `jante hobe` - ei khetre ki sob project a ei gulo banai naki, kono framework use kore or onno kichu !!!
 - Six, application-specific components

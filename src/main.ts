@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import { VueQueryPlugin, QueryClient } from '@tanstack/vue-query'
-import './style.css'
+import './styles/main.css'
 import router from './router'
 
 const queryClient = new QueryClient()

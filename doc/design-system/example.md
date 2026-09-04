@@ -137,12 +137,14 @@ Shadows
 
 এটাই আসলে Figma → Code workflow-এর সবচেয়ে important practical step।
 
-Note: 
+`Note:` 
 ekjon designer er kache theke ei gulo niye nibo 
 or na pele design theke AI diye ber kore nibo.
 
+tokens.css er sobkichu designer dite parbe
 
-1. Design language er each part niye kaj suru kori - 
+
+1. `Design language` er each part niye kaj suru kori - 
 
 Color: (Semantic Colors)
 Primary    → Blue
@@ -206,14 +208,17 @@ MD
 LG
 
 
-2. Now languer er part gulo ke code a convert korbo. token create korbo 
+2. Now language er part gulo ke code a convert korbo. `token create` korbo 
 
-
-
-STEP 3 — Design Tokens + Tailwind Theme
-
-Step 3.1 — tokens.css
+tokens.css
 src/styles/tokens.css -> এখানে আমাদের raw design tokens রাখব।
+
+3. `Theme` create kora
+   src/styles/main.css
+```
+@theme {}
+```
+eivabe theme ereate korbo
 
 
 
@@ -332,6 +337,318 @@ Code-এ:
 **“Color হলো design language-এর একটা part.”**
 
 আর **Color, Typography, Spacing ইত্যাদি individual categories**; এগুলোর values (`#2563EB`, `16px`, `8px`) হলো **tokens**।
+
+# Step - Design Theme
+
+**Theme create করা মানে হলো—আমাদের application-এর visual/design rules-গুলোকে একটা centralized system হিসেবে define করা**, যাতে পুরো application একই design follow করে।
+
+### Theme ছাড়া
+
+একেক component-এ তুমি নিজে নিজে লিখছো:
+
+```html
+<button class="bg-[#2563EB] rounded-[8px]">
+```
+
+আর অন্য জায়গায়:
+
+```html
+<div class="bg-[#2563EB] rounded-[8px]">
+```
+
+এখানে design values ছড়িয়ে আছে।
+
+---
+
+### Theme থাকলে
+
+আমরা আগে define করলাম:
+
+```css
+@theme {
+  --color-primary: #2563EB;
+  --radius-md: 8px;
+}
+```
+
+এখন component-এ:
+
+```html
+<button class="bg-primary rounded-md">
+```
+
+Tailwind জানে:
+
+```text
+bg-primary
+    ↓
+#2563EB
+
+rounded-md
+    ↓
+8px
+```
+
+এটাই **theme-এর practical benefit**।
+
+---
+
+
+```css
+@theme {
+  --color-primary: var(--color-primary);
+  --radius-md: var(--radius-md);
+}
+```
+
+এখানে আমরা Tailwind-কে বলছি:
+
+> "এই design values-গুলো Tailwind-এর utility class হিসেবে available করো।"
+
+তাই:
+
+```text
+Design Token
+     ↓
+Tailwind Theme
+     ↓
+Tailwind utility
+     ↓
+Component
+```
+
+### এক লাইনে মনে রাখো
+
+> **Design Tokens = design-এর reusable values**
+> **Theme = application/framework-কে সেই design rules কীভাবে ব্যবহার করতে হবে তার configuration**
+
+Theme = application/framework-কে সেই design rules কীভাবে ব্যবহার করতে হবে তার configuration
+tar mane ki, jodi theme a primary-color na ditam --color-primary: var(--color-primary); tahole eita ki tailwind theke peto 
+akta simple example dau, ami theme a eita deyar por ki tailwind er ta ovverride korlam naki ami new dilam
+
+
+তুমি আসলে Tailwind-এর theme-এ একটা নতুন design token / color যোগ করেছো:
+
+
+আর Tailwind-এর ক্ষেত্রে **`@theme` হলো Tailwind-এর theme configuration করার জায়গা**।
+
+## Question
+
+```
+tarmane amar understand hocche, 
+- primary name akta new variable add korlam ja tailwind a chilo na, 
+- aar bg-blue-500 a age theke chilo, ami jodi caitam sei variable a use korte partam, new akat color code diye
+- theme er uddeso hocche, amader project er color code gulo sob kichu te apply korte parbo, tailwind er gulo na. 
+- kono jaigai caile tailwind er gulo use korte parbo.
+
+last question, --color-primary mane, bg-primary, text-primary, etc-primary
+```
+
+
+হ্যাঁ, **তোমার understanding ঠিক আছে।** শুধু একটা ছোট correction:
+
+> Theme-এর উদ্দেশ্য শুধু color না; project-এর **পুরো design rules** Tailwind-এ usable করা—color, font, radius, shadow, typography ইত্যাদি।
+
+আর তোমার last question-এর উত্তর: **হ্যাঁ, exactly।**
+
+```css
+@theme {
+  --color-primary: #2563eb;
+}
+```
+
+`--color-primary` হলো **একটা color theme variable/token**।
+
+Tailwind-এর `color` namespace-এর কারণে এটা থেকে related utility তৈরি হয়:
+
+```html
+bg-primary
+text-primary
+border-primary
+ring-primary
+outline-primary
+decoration-primary
+```
+
+মানে:
+
+```text
+--color-primary
+       ↓
+ ┌─────┼──────┬─────────┐
+ ↓     ↓      ↓         ↓
+bg-   text-  border-   ring-
+primary primary primary primary
+```
+
+উদাহরণ:
+
+```html
+<button class="bg-primary text-white">
+  Save
+</button>
+
+<p class="text-primary">
+  Welcome
+</p>
+
+<input class="border-primary" />
+```
+
+সব জায়গায় একই:
+
+```text
+#2563EB
+```
+
+ব্যবহার হবে।
+
+**এই জন্যই `--color-primary` শুধু একটা variable না—Tailwind-এর কাছে এটা একটা semantic color definition**, যেটা বিভিন্ন utility দিয়ে বিভিন্ন CSS property-তে ব্যবহার করা যায়।
+
+## question 
+
+```
+--text-xl: var(--font-size-xl);
+--font-weight-regular: var(--font-weight-regular);
+--spacing-1: var(--spacing-1);
+--radius-sm: var(--radius-sm);
+--shadow-sm: var(--shadow-sm);
+
+ekhane namespace gulo ki ki, aar kivabe use korbo, aar tailwind er namespace gulo ba ekhane kon pattern a eigulo korte hoi
+```
+
+Namespace তুমি নিজের ইচ্ছামতো --abc-* বানালেই Tailwind utility তৈরি করবে না।
+
+Tailwind যে namespace-গুলোকে চেনে, সেই namespace-এর pattern follow করতে হয়।
+
+এটাই @theme বোঝার মূল বিষয়।
+
+
+### 1. Namespace কী?
+
+Tailwind-এর `@theme`-এ variable-এর **prefix** দেখে Tailwind বুঝে ওই variable দিয়ে কোন ধরনের utility তৈরি করবে।
+
+যেমন:
+
+```css
+@theme {
+  --color-primary: #2563eb;
+}
+```
+
+এখানে:
+
+```text
+--color-     ← namespace
+primary      ← name
+```
+
+অর্থাৎ:
+
+```text
+namespace = color
+name      = primary
+```
+
+---
+
+### 2. গুরুত্বপূর্ণ Tailwind namespaces
+
+Tailwind v4-এ commonly ব্যবহৃত namespaceগুলো:
+
+| Namespace         | কী define করে         | Example              | ব্যবহার                      |
+| ----------------- | --------------------- | -------------------- | ---------------------------- |
+| `--color-*`       | Color                 | `--color-primary`    | `bg-primary`, `text-primary` |
+| `--text-*`        | Font size             | `--text-xl`          | `text-xl`                    |
+| `--font-*`        | Font family           | `--font-sans`        | `font-sans`                  |
+| `--font-weight-*` | Font weight           | `--font-weight-bold` | `font-bold`                  |
+| `--tracking-*`    | Letter spacing        | `--tracking-wide`    | `tracking-wide`              |
+| `--leading-*`     | Line height           | `--leading-normal`   | `leading-normal`             |
+| `--spacing-*`     | Spacing scale         | `--spacing-4`        | `p-4`, `m-4`, `gap-4`        |
+| `--radius-*`      | Border radius         | `--radius-md`        | `rounded-md`                 |
+| `--shadow-*`      | Box shadow            | `--shadow-md`        | `shadow-md`                  |
+| `--breakpoint-*`  | Responsive breakpoint | `--breakpoint-lg`    | `lg:`                        |
+| `--ease-*`        | Transition easing     | `--ease-in`          | `ease-in`                    |
+| `--animate-*`     | Animation             | `--animate-spin`     | `animate-spin`               |
+
+---
+
+### 8. তাহলে Pattern কী?
+
+এটাই সবচেয়ে important।
+
+Tailwind-এর `@theme`-এ সাধারণ pattern:
+
+```css
+@theme {
+  --namespace-name: value;
+}
+```
+
+যেমন:
+
+```css
+@theme {
+  --color-primary: #2563eb;
+
+  --text-xl: 20px;
+
+  --font-weight-bold: 700;
+
+  --spacing-4: 16px;
+
+  --radius-md: 8px;
+
+  --shadow-md: 0 4px 6px rgb(0 0 0 / 8%);
+}
+```
+
+তারপর Tailwind namespace অনুযায়ী utility তৈরি/ব্যবহার করতে পারে:
+
+```text
+--color-primary
+      ↓
+bg-primary
+text-primary
+border-primary
+
+
+--text-xl
+      ↓
+text-xl
+
+
+--font-weight-bold
+      ↓
+font-bold
+
+
+--spacing-4
+      ↓
+p-4
+m-4
+gap-4
+
+
+--radius-md
+      ↓
+rounded-md
+
+
+--shadow-md
+      ↓
+shadow-md
+```
+
+আর একটা জিনিস মনে রেখো:
+
+**Namespace তুমি নিজের ইচ্ছামতো `--abc-*` বানালেই Tailwind utility তৈরি করবে না।**
+
+Tailwind যে namespace-গুলোকে চেনে, সেই namespace-এর pattern follow করতে হয়।
+
+এটাই `@theme` বোঝার মূল বিষয়।
+
+---
 
 
 # Design system
