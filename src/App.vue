@@ -19,6 +19,7 @@ function handleMethod(data) {
   <router-link to="/about">About</router-link>
   <router-link to="/tan">Tan</router-link>
   <router-link to="/login">Login</router-link>
+  <router-link to="/comp">Component</router-link>
 
   <div>
 <!--    <h1>{{ counter.count }}</h1>-->

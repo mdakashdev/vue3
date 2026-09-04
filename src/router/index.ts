@@ -7,6 +7,7 @@ import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import TanStack from "@/views/TanStack.vue";
 import Login from "@/views/auth/Login.vue";
+import ComponentView from "@/views/ComponentView.vue";
 
 
 const router = createRouter({
@@ -32,6 +33,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login
+    },
+    {
+      path: '/comp',
+      name: 'component',
+      component: ComponentView
     }
   ]
 })
