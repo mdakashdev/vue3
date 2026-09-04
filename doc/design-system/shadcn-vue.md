@@ -3,16 +3,22 @@
 after install we get 
 
 lib/utils.ts
-components.json
-
+    এখানে সাধারণত cn() utility থাকবে:
+components.json  --> এটা shadcn-এর configuration file।
+  এখানে shadcn জানে: components কোথায় রাখবে?, utils কোথায়? styles কোথায়? alias কী?
+  অর্থাৎ এটা shadcn CLI-এর configuration।
+src/styles/main.css
+    এটা সবচেয়ে interesting, কারণ আমাদের আগের Theme setup-এর সাথে এখন shadcn-এর setup এসেছে।
+    এখন এখানে shadcn-এর generated CSS/theme variables থাকবে।
+    তাই এখনই নিজের আগের main.css overwrite/delete কোরো না।
 
 when install shadcn-vue, with installation
 
-@lucide/vue
-class-variance-authority
-clsx
-tailwind-merge
-tw-animate-css
+@lucide/vue --> Icon library।
+class-variance-authority --> এটা আমাদের Button-এর মতো component-এর variant/size management সহজ করে। shadcn সাধারণত এই ধরনের logic-কে cva() দিয়ে organize করে।
+clsx --> Conditional class name তৈরি করার utility। disabled = true হলে opacity-50 যোগ হবে।
+tailwind-merge --> Tailwind class conflict intelligently merge করে। শেষে conflicting px class-এর মধ্যে appropriate one রাখা যায়।
+tw-animate-css  --> Tailwind-এর সাথে animation/transition utilities-এর জন্য।
 
 eigulo install hoi.
 
