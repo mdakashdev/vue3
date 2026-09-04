@@ -14,12 +14,6 @@ Users : User table
 Authentication: Login form
 
 
-STEP 2
-Design Tokens
-↓
-STEP 3
-Theme + Tailwind
-↓
 STEP 4
 Base Components
 Button
@@ -223,7 +217,7 @@ eivabe theme ereate korbo
 
 
 
-# Step - Design language
+# Step1 - Design language
 
 akta figma / sketch jokhon hate pabo, then kaj hocche `design language analysis` kora.
 
@@ -310,35 +304,7 @@ Design Token
 
 ---
 
-# Design tokens
-
-design language er sob part ke গুলোকে code-এ নিয়ে আসবে **Design Tokens** হিসেবে।
-
-যেমন Figma থেকে বুঝলে:
-
-```text
-Primary color = Blue
-Spacing = 8px system
-Radius = 8px
-Font = Inter
-```
-
-Code-এ:
-
-```css
---color-primary: #2563EB;
---spacing-unit: 8px;
---radius-md: 8px;
---font-family: Inter;
-```
-
-এগুলো হলো **Design Tokens**।
-
-**“Color হলো design language-এর একটা part.”**
-
-আর **Color, Typography, Spacing ইত্যাদি individual categories**; এগুলোর values (`#2563EB`, `16px`, `8px`) হলো **tokens**।
-
-# Step - Design Theme
+# Step2 - Design Theme
 
 **Theme create করা মানে হলো—আমাদের application-এর visual/design rules-গুলোকে একটা centralized system হিসেবে define করা**, যাতে পুরো application একই design follow করে।
 
@@ -423,7 +389,7 @@ Component
 > **Theme = application/framework-কে সেই design rules কীভাবে ব্যবহার করতে হবে তার configuration**
 
 Theme = application/framework-কে সেই design rules কীভাবে ব্যবহার করতে হবে তার configuration
-tar mane ki, jodi theme a primary-color na ditam --color-primary: var(--color-primary); tahole eita ki tailwind theke peto 
+tar mane ki, jodi theme a primary-color na ditam --color-primary: var(--color-primary); tahole eita ki tailwind theke peto
 akta simple example dau, ami theme a eita deyar por ki tailwind er ta ovverride korlam naki ami new dilam
 
 
@@ -505,7 +471,7 @@ primary primary primary primary
 
 **এই জন্যই `--color-primary` শুধু একটা variable না—Tailwind-এর কাছে এটা একটা semantic color definition**, যেটা বিভিন্ন utility দিয়ে বিভিন্ন CSS property-তে ব্যবহার করা যায়।
 
-## question 
+## question
 
 ```
 --text-xl: var(--font-size-xl);
@@ -555,21 +521,7 @@ name      = primary
 ### 2. গুরুত্বপূর্ণ Tailwind namespaces
 
 Tailwind v4-এ commonly ব্যবহৃত namespaceগুলো:
-
-| Namespace         | কী define করে         | Example              | ব্যবহার                      |
-| ----------------- | --------------------- | -------------------- | ---------------------------- |
-| `--color-*`       | Color                 | `--color-primary`    | `bg-primary`, `text-primary` |
-| `--text-*`        | Font size             | `--text-xl`          | `text-xl`                    |
-| `--font-*`        | Font family           | `--font-sans`        | `font-sans`                  |
-| `--font-weight-*` | Font weight           | `--font-weight-bold` | `font-bold`                  |
-| `--tracking-*`    | Letter spacing        | `--tracking-wide`    | `tracking-wide`              |
-| `--leading-*`     | Line height           | `--leading-normal`   | `leading-normal`             |
-| `--spacing-*`     | Spacing scale         | `--spacing-4`        | `p-4`, `m-4`, `gap-4`        |
-| `--radius-*`      | Border radius         | `--radius-md`        | `rounded-md`                 |
-| `--shadow-*`      | Box shadow            | `--shadow-md`        | `shadow-md`                  |
-| `--breakpoint-*`  | Responsive breakpoint | `--breakpoint-lg`    | `lg:`                        |
-| `--ease-*`        | Transition easing     | `--ease-in`          | `ease-in`                    |
-| `--animate-*`     | Animation             | `--animate-spin`     | `animate-spin`               |
+https://tailwindcss.com/docs/theme#theme-variable-namespaces
 
 ---
 
@@ -649,6 +601,48 @@ Tailwind যে namespace-গুলোকে চেনে, সেই namespace-�
 এটাই `@theme` বোঝার মূল বিষয়।
 
 ---
+
+# Step3 - Design tokens
+
+design language er sob part ke গুলোকে code-এ নিয়ে আসবে **Design Tokens** হিসেবে।
+
+যেমন Figma থেকে বুঝলে:
+
+```text
+Primary color = Blue
+Spacing = 8px system
+Radius = 8px
+Font = Inter
+```
+
+Code-এ:
+
+```css
+--color-primary: #2563EB;
+--spacing-unit: 8px;
+--radius-md: 8px;
+--font-family: Inter;
+```
+
+এগুলো হলো **Design Tokens**।
+
+**“Color হলো design language-এর একটা part.”**
+
+আর **Color, Typography, Spacing ইত্যাদি individual categories**; এগুলোর values (`#2563EB`, `16px`, `8px`) হলো **tokens**।
+
+# Step 4 - Base Components / Small reusable UI components
+
+আমরা আগে **৩টা reusable component** বানাবো:
+
+```text
+components/ui/
+├── Button.vue
+├── Input.vue
+└── Card.vue
+```
+
+tar mane amra, amder design theke button variant diye button baniye fellam - ja amra amader project a jekono jaigai ei button component use korte parbo
+
 
 
 # Design system

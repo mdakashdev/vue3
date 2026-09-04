@@ -12,19 +12,27 @@ akta sketch / figma example niye sob gulo dhap korbe.
 Goal হলো consistency
 
 - sketch pabar por, 
-- First, `Design Language` 
+
+## First: `Design Language` 
 - ` Colors` (Primary, Secondary), (Primary #2563EB; Background #FFFFFF -> ei gulor design token hote pare)
 - `Typography` ber korbe (Font Family, Heading, Body) (H1: 32px / 700, Body: 16px / 400)
 - `Spacing` system বুঝবে - ধরো Figma-তে বারবার দেখলে: 4px, 8px, 12px, 16px, etc তাহলে বুঝবে design একটা spacing system follow করছে।
 
-- Second, `Tokens`
+## Second: `Tokens create`
 
-- Third, `theme create` korbe 
+## Third: `theme create` 
 - Professional project-এ সাধারণত design values centralized রাখার চেষ্টা করা হয়।
 
-- Fifth, Base UI Components like - button, input, select, etc ei gulo business logic lage na, eigulo small reusable UI components.
-    `jante hobe` - ei khetre ki sob project a ei gulo banai naki, kono framework use kore or onno kichu !!!
-- Six, application-specific components
+## Fourth: `Base UI Components / small reusable UI components` like
+- button, input, select, etc ei gulo business logic lage na, eigulo small reusable UI components.
+- সবচেয়ে common বাস্তব approach: **Library + নিজের components** (amra 2 ta learn korla - nije banalam Button.vue & library - shadcn/vue)
+- Library - follow @design-system/shadcn-vue.md
+- tar mane amra, amder design theke button variant diye button baniye fellam - ja amra amader project a jekono jaigai ei button component use korte parbo
+- inside src/component/ui/Button.vue
+
+
+- Fifth, application-specific components
+
 - Layout : application-এর structure।
 - Pages
 - Raw CSS কোথায় - component a
