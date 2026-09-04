@@ -4,7 +4,28 @@ import Button from "@/components/ui/Button.vue";
 
 <template>
   <div class="ml-10">
-    <Button>Button</Button>
+    <Button
+      variant="primary"
+      size="lg"
+    >
+      Primary
+    </Button>
+
+    <Button
+      variant="secondary"
+      size="md"
+    >
+      Secondary
+    </Button>
+
+    <Button
+      variant="danger"
+      size="sm"
+    >
+      Danger
+    </Button>
+
+    <Button disabled>Disabled</Button>
   </div>
 </template>
 
