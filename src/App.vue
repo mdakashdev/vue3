@@ -1,25 +1,39 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import BaseInput from "@/components/BaseInput.vue";
 import { useCounterStore } from "@/stores/counter.ts";
 
-const counter = useCounterStore(); //method alada vabe destrucute korte hoi.
-
+const counter = useCounterStore();
 const name = ref('');
 const username = ref('');
+
+const isDark = ref(false);
+
+watch(isDark, (val) => {
+  document.documentElement.classList.toggle('dark', val);
+});
 
 function handleMethod(data) {
   console.log('hello', data);
 }
-
 </script>
 
 <template>
-  <router-link to="/">Home</router-link>
-  <router-link to="/about">About</router-link>
-  <router-link to="/tan">Tan</router-link>
-  <router-link to="/login">Login</router-link>
-  <router-link to="/comp">Component</router-link>
+  <div class="flex items-center gap-4 p-3 border-b">
+    <router-link to="/">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <router-link to="/tan">Tan</router-link>
+    <router-link to="/login">Login</router-link>
+    <router-link to="/comp">Component</router-link>
+
+    <button
+      class="ml-auto px-3 py-1 rounded border text-sm font-medium transition-colors"
+      :class="isDark ? 'bg-gray-800 text-white border-gray-600' : 'bg-white text-gray-800 border-gray-300'"
+      @click="isDark = !isDark"
+    >
+      {{ isDark ? '☀️ Light' : '🌙 Dark' }}
+    </button>
+  </div>
 
   <div>
 <!--    <h1>{{ counter.count }}</h1>-->

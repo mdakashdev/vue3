@@ -1,5 +1,7 @@
 /*base.css-এ আমরা পুরো application-এর global/default CSS behavior রাখি।*/
 
+
+/*এটা Tailwind-কে বলে যে .dark class থাকলে dark variant apply করতে হবে।*/
 @custom-variant dark (&:is(.dark *));
 
 @layer base {

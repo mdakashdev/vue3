@@ -310,6 +310,11 @@ tar mane, shadcn er design token value ba design na use kore, amar token / desig
 shadcn = component implementation
 তোমার tokens = visual design
 
+### dark mode 
+- dark er jonno, .dark theke value pabe sei jonno - amra base.css a janano ache kokhon dark variand add korbe , jokhon .dark class pabe
+- eita optional - explicit dite caile -Button index a class add kore dite hobe like - `dark:bg-destructive/80` or hover etc dite caile
+- 
+
 ## Problem: name collision
 
 Both your @theme and shadcn's @theme inline were defining --color-primary and --color-secondary. The last one in the file always wins.
