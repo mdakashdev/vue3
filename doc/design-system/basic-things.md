@@ -25,7 +25,7 @@ Goal হলো consistency
 
 ## Fourth: `Base UI Components / small reusable UI components` like
 - button, input, select, etc ei gulo business logic lage na, eigulo small reusable UI components.
-- সবচেয়ে common বাস্তব approach: **Library + নিজের components** (amra 2 ta learn korla - nije banalam Button.vue & library - shadcn/vue)
+- সবচেয়ে common বাস্তব approach: **Library + নিজের components** `(amra 2 ta learn korla - nije banalam Button.vue & library - shadcn/vue)`
 - Library - follow @design-system/shadcn-vue.md
 - tar mane amra, amder design theke button variant diye button baniye fellam - ja amra amader project a jekono jaigai ei button component use korte parbo
 - inside src/component/ui/Button.vue

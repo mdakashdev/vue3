@@ -1,0 +1,12 @@
+/*base.css-এ আমরা পুরো application-এর global/default CSS behavior রাখি।*/
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

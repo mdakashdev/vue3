@@ -1,0 +1,63 @@
+@theme {
+  /* Brand Colors (custom design tokens — separate from shadcn primary/secondary) */
+  --color-brand-primary: var(--ds-primary);
+  /*--color-blue-500: var(--ds-blue-500);*/
+  --color-brand-secondary: var(--ds-secondary);
+
+  --color-brand-success: var(--ds-success);
+  --color-brand-warning: var(--ds-warning);
+  --color-brand-danger: var(--ds-danger);
+
+  --color-neutral-50: var(--ds-neutral-50);
+  --color-neutral-100: var(--ds-neutral-100);
+  --color-neutral-200: var(--ds-neutral-200);
+  --color-neutral-300: var(--ds-neutral-300);
+  --color-neutral-400: var(--ds-neutral-400);
+  --color-neutral-500: var(--ds-neutral-500);
+  --color-neutral-600: var(--ds-neutral-600);
+  --color-neutral-700: var(--ds-neutral-700);
+  --color-neutral-800: var(--ds-neutral-800);
+  --color-neutral-900: var(--ds-neutral-900);
+
+  /* Typography */
+  --font-sans: var(--ds-font-sans);
+
+  --text-xs: var(--ds-font-size-xs);
+  --text-sm: var(--ds-font-size-sm);
+  --text-md: var(--ds-font-size-md);
+  --text-lg: var(--ds-font-size-lg);
+  --text-xl: var(--ds-font-size-xl);
+  --text-2xl: var(--ds-font-size-2xl);
+  --text-3xl: var(--ds-font-size-3xl);
+  --text-4xl: var(--ds-font-size-4xl);
+
+  /* Font Weight */
+  --font-weight-normal: var(--ds-weight-regular);
+  --font-weight-medium: var(--ds-weight-medium);
+  --font-weight-semibold: var(--ds-weight-semibold);
+  --font-weight-bold: var(--ds-weight-bold);
+
+  /* Spacing */
+  --spacing-1: var(--ds-spacing-1);
+  --spacing-2: var(--ds-spacing-2);
+  --spacing-3: var(--ds-spacing-3);
+  --spacing-4: var(--ds-spacing-4);
+  --spacing-5: var(--ds-spacing-5);
+  --spacing-6: var(--ds-spacing-6);
+  --spacing-8: var(--ds-spacing-8);
+  --spacing-10: var(--ds-spacing-10);
+  --spacing-12: var(--ds-spacing-12);
+  --spacing-16: var(--ds-spacing-16);
+
+  /* Radius */
+  --radius-sm: var(--ds-radius-sm);
+  --radius-md: var(--ds-radius-md);
+  --radius-lg: var(--ds-radius-lg);
+  --radius-xl: var(--ds-radius-xl);
+  --radius-full: var(--ds-radius-full);
+
+  /* Shadows */
+  --shadow-sm: var(--ds-shadow-sm);
+  --shadow-md: var(--ds-shadow-md);
+  --shadow-lg: var(--ds-shadow-lg);
+}

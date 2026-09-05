@@ -6,6 +6,8 @@ import { Button as SButton } from '@/components/ui/button'
 <template>
   <div class="ml-10">
     <SButton>Shadcn BUtton</SButton>
+    <SButton variant="secondary">Shadcn BUtton</SButton>
+    <SButton variant="destructive">Shadcn BUtton</SButton>
     <hr>
     <Button
       variant="primary"

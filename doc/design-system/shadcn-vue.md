@@ -280,12 +280,35 @@ Primary = #2563EB
 
 ## add button component 
 
-
-
 # Design compatible 
 
 1. Target hocche shadcn Button-কে এমনভাবে customize করব যেন, amar **primary theme** ব্যবহার করে।
 
+
+## Step 1: Design Token → shadcn Theme Mapping
+
+```
+Figma Design
+↓
+Your Theme / Tokens
+↓
+shadcn Button
+↓
+Your project's Button design
+```
+
+* সহজভাবে
+
+অর্থাৎ **component architecture shadcn-এর**, কিন্তু **visual design/theme তোমার Design System-এর**।
+
+এটাই আমরা চাচ্ছি।
+
+আর একটা গুরুত্বপূর্ণ কথা: **shadcn-এর component code ব্যবহার করছি মানেই shadcn-এর design রাখতে হবে—এমন না।** shadcn-এর মূল সুবিধাই হলো component source code তোমার project-এর মধ্যে থাকে, তাই theme/design নিজের মতো control করতে পারো।
+
+tar mane, shadcn er design token value ba design na use kore, amar token / design use korar jonnoo mapping ta kore dilam
+
+shadcn = component implementation
+তোমার tokens = visual design
 
 ## Problem: name collision
 
@@ -327,7 +350,6 @@ shadcn's @theme inline block — untouched:
 │ bg-brand-secondary │ #64748b (your slate)        │ your <Button> ✅ │                                                                         
 ├────────────────────┼─────────────────────────────┼──────────────────┤                                                                         
 │ bg-brand-danger    │ #dc2626 (your red)          │ your <Button> ✅ │
-
 
 ## আমরা কী করব?
 
