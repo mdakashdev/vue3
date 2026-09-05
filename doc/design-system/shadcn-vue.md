@@ -1,7 +1,7 @@
 # concept
 
 - এটা project-এ shadcn-এর foundation/setup তৈরি করে। `pnpm dlx shadcn-vue@latest init`
-- যে component দরকার, সেটা add করবে - `pnpm dlx shadcn-vue@latest add button`
+- যে component দরকার, সেটা add করবে - `pnpm dlx shadcn-vue@latest add button` sahte reka-ui install hoi
 
     এটাই shadcn-এর একটা গুরুত্বপূর্ণ concept।
 
@@ -99,8 +99,6 @@ Card.vue
 তাই পরে তুমি চাইলে `Button.vue` নিজের design অনুযায়ী modify করতে পারবে।
 
 এ কারণেই shadcn-কে traditional `"npm install করে component import"` library-এর মতো ভাবলে পুরো picture টা পাওয়া যায় না।
-
-
 
 # shadcn-vue
 
@@ -282,3 +280,107 @@ Primary = #2563EB
 
 ## add button component 
 
+
+
+# Design compatible 
+
+1. Target hocche shadcn Button-কে এমনভাবে customize করব যেন, amar **primary theme** ব্যবহার করে।
+
+
+## Problem: name collision
+
+Both your @theme and shadcn's @theme inline were defining --color-primary and --color-secondary. The last one in the file always wins.
+
+## Solution: namespaced brand- colors
+
+src/styles/main.css — your @theme block:
+
+ ```css                                                                                                                                          
+   @theme {                                                                                                                                      
+     /* your tokens → separate namespace, no collision */                                                                                        
+     --color-brand-primary:   var(--ds-primary);    /* #2563eb */                                                                                
+     --color-brand-secondary: var(--ds-secondary);  /* #64748b */                                                                                
+     --color-brand-danger:    var(--ds-danger);      /* #dc2626 */                                                                               
+   }                                                                                                                                             
+ ```                                                                                                                                             
+
+shadcn's @theme inline block — untouched:
+
+ ```css                                                                                                                                          
+   @theme inline {                                                                                                                               
+     --color-primary:   var(--primary);   /* shadcn black — for shadcn Button */                                                                 
+     --color-secondary: var(--secondary); /* shadcn white — for shadcn Button */                                                                 
+   }                                                                                                                                             
+ ```                                                                                                                                             
+
+## Now you have two independent sets:
+
+┌────────────────────┬─────────────────────────────┬──────────────────┐                                                                         
+│ Tailwind class     │ Color                       │ Used by          │                                                                         
+├────────────────────┼─────────────────────────────┼──────────────────┤                                                                         
+│ bg-primary         │ shadcn default (near black) │ shadcn <Button>  │                                                                         
+├────────────────────┼─────────────────────────────┼──────────────────┤                                                                         
+│ bg-secondary       │ shadcn default (near white) │ shadcn <Button>  │                                                                         
+├────────────────────┼─────────────────────────────┼──────────────────┤                                                                         
+│ bg-brand-primary   │ #2563eb (your blue)         │ your <Button> ✅ │                                                                         
+├────────────────────┼─────────────────────────────┼──────────────────┤                                                                         
+│ bg-brand-secondary │ #64748b (your slate)        │ your <Button> ✅ │                                                                         
+├────────────────────┼─────────────────────────────┼──────────────────┤                                                                         
+│ bg-brand-danger    │ #dc2626 (your red)          │ your <Button> ✅ │
+
+
+## আমরা কী করব?
+
+> আমার recommendation হলো **shadcn Button রেখে তোমার design token/theme-এর সাথে integrate করব**।
+
+মানে:
+
+```text
+Figma Design
+     ↓
+Your Theme / Tokens
+     ↓
+shadcn Button
+     ↓
+Your project's Button design
+```
+
+এটাই real-world approach।
+
+তোমার আগের design যদি ছিল:
+
+```text
+primary   → blue
+secondary → purple
+danger    → red
+```
+
+তাহলে shadcn Button-কে এমনভাবে customize করব যেন:
+
+```vue
+<Button>
+  Save
+</Button>
+```
+
+তোমার **primary theme** ব্যবহার করে।
+
+আর:
+
+```vue
+<Button variant="secondary">
+  Cancel
+</Button>
+```
+
+তোমার **secondary theme** ব্যবহার করবে।
+
+এবং:
+
+```vue
+<Button variant="destructive">
+  Delete
+</Button>
+```
+
+তোমার **danger theme** ব্যবহার করবে।

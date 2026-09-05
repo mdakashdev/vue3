@@ -21,9 +21,9 @@ withDefaults(defineProps<Props>(), {
     :disabled="disabled"
     class="text-white rounded-md mr-5 mt-10"
     :class="{
-     'bg-primary': variant === 'primary',
-     'bg-secondary': variant === 'secondary',
-     'bg-danger': variant === 'danger',
+     'bg-brand-primary': variant === 'primary',
+     'bg-brand-secondary': variant === 'secondary',
+     'bg-brand-danger': variant === 'danger',
       'px-3 py-1.5 text-sm': size === 'sm',
       'px-4 py-2 text-base': size === 'md',
       'px-5 py-2.5 text-lg': size === 'lg',

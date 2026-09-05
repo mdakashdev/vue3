@@ -4,24 +4,24 @@
      ======================================== */
 
   /* Semantic Colors */
-  --color-primary: #2563eb;
-  /*--color--blue-500: #dc2626; use same variable who have in tailwind css for test */
-  --color-secondary: #64748b;
-  --color-success: #16a34a;
-  --color-warning: #f59e0b;
-  --color-danger: #dc2626;
+  --ds-primary: #2563eb;
+  /*--ds-blue-500: #dc2626; use same variable who have in tailwind css for test */
+  --ds-secondary: #64748b;
+  --ds-success: #16a34a;
+  --ds-warning: #f59e0b;
+  --ds-danger: #dc2626;
 
   /* Neutral Colors */
-  --color-neutral-50: #f9fafb;
-  --color-neutral-100: #f3f4f6;
-  --color-neutral-200: #e5e7eb;
-  --color-neutral-300: #d1d5db;
-  --color-neutral-400: #9ca3af;
-  --color-neutral-500: #6b7280;
-  --color-neutral-600: #4b5563;
-  --color-neutral-700: #374151;
-  --color-neutral-800: #1f2937;
-  --color-neutral-900: #111827;
+  --ds-neutral-50: #f9fafb;
+  --ds-neutral-100: #f3f4f6;
+  --ds-neutral-200: #e5e7eb;
+  --ds-neutral-300: #d1d5db;
+  --ds-neutral-400: #9ca3af;
+  --ds-neutral-500: #6b7280;
+  --ds-neutral-600: #4b5563;
+  --ds-neutral-700: #374151;
+  --ds-neutral-800: #1f2937;
+  --ds-neutral-900: #111827;
 
 
   /* ========================================
@@ -29,66 +29,66 @@
      ======================================== */
 
   /* Font Family */
-  --font-family-sans: "Inter", sans-serif;
+  --ds-font-sans: "Inter", sans-serif;
 
 
   /* Font Size */
-  --font-size-xs: 12px;
-  --font-size-sm: 14px;
-  --font-size-md: 16px;
-  --font-size-lg: 18px;
-  --font-size-xl: 20px;
-  --font-size-2xl: 24px;
-  --font-size-3xl: 32px;
-  --font-size-4xl: 36px;
+  --ds-font-size-xs: 12px;
+  --ds-font-size-sm: 14px;
+  --ds-font-size-md: 16px;
+  --ds-font-size-lg: 18px;
+  --ds-font-size-xl: 20px;
+  --ds-font-size-2xl: 24px;
+  --ds-font-size-3xl: 32px;
+  --ds-font-size-4xl: 36px;
 
 
   /* Font Weight */
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --ds-weight-regular: 400;
+  --ds-weight-medium: 500;
+  --ds-weight-semibold: 600;
+  --ds-weight-bold: 700;
 
 
   /* Line Height */
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
+  --ds-line-height-tight: 1.25;
+  --ds-line-height-normal: 1.5;
+  --ds-line-height-relaxed: 1.75;
 
 
   /* ========================================
      SPACING TOKENS
      ======================================== */
 
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-8: 32px;
-  --spacing-10: 40px;
-  --spacing-12: 48px;
-  --spacing-16: 64px;
+  --ds-spacing-1: 4px;
+  --ds-spacing-2: 8px;
+  --ds-spacing-3: 12px;
+  --ds-spacing-4: 16px;
+  --ds-spacing-5: 20px;
+  --ds-spacing-6: 24px;
+  --ds-spacing-8: 32px;
+  --ds-spacing-10: 40px;
+  --ds-spacing-12: 48px;
+  --ds-spacing-16: 64px;
 
 
   /* ========================================
      BORDER RADIUS TOKENS
      ======================================== */
 
-  --radius-none: 0px;
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-full: 9999px;
+  --ds-radius-none: 0px;
+  --ds-radius-sm: 4px;
+  --ds-radius-md: 8px;
+  --ds-radius-lg: 12px;
+  --ds-radius-xl: 16px;
+  --ds-radius-full: 9999px;
 
 
   /* ========================================
      SHADOW TOKENS
      ======================================== */
 
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
-  --shadow-md: 0 4px 6px rgb(0 0 0 / 8%);
-  --shadow-lg: 0 10px 15px rgb(0 0 0 / 10%);
+  --ds-shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
+  --ds-shadow-md: 0 4px 6px rgb(0 0 0 / 8%);
+  --ds-shadow-lg: 0 10px 15px rgb(0 0 0 / 10%);
 }
