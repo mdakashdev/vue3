@@ -61,3 +61,7 @@
   --shadow-md: var(--ds-shadow-md);
   --shadow-lg: var(--ds-shadow-lg);
 }
+
+.dark {
+  --color-brand-primary: black;
+}
