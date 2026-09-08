@@ -3,11 +3,12 @@ import {
   createWebHistory
 } from 'vue-router';
 
-import HomeView from "@/views/HomeView.vue";
 import AboutView from "@/views/AboutView.vue";
 import TanStack from "@/views/TanStack.vue";
 import Login from "@/views/auth/Login.vue";
 import ComponentView from "@/views/ComponentView.vue";
+import AppLayout from "@/layouts/AppLayout.vue"
+import Dashboard from "@/components/Dashboard.vue"
 
 
 const router = createRouter({
@@ -16,8 +17,13 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      component: AppLayout,
+      children: [
+        {
+          path: '',
+          component: Dashboard
+        }
+      ]
     },
     {
       path: '/about',
