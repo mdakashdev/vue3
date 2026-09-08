@@ -30,6 +30,15 @@ Goal হলো consistency
 - tar mane amra, amder design theke button variant diye button baniye fellam - ja amra amader project a jekono jaigai ei button component use korte parbo
 - inside src/component/ui/Button.vue
 
+### ekhane ja korlam 
+library - shadcn/vue use korlam, sei jonno
+1. install korechi, eita sadharon install na. then jei component lagbe seta install korechi.
+2. them amader theme er sathe, shadcn theme er akta mapping kora. jeno component source code shadcn er aar design amader hoi.
+3. dark mode use korechi. .dark class use kore - dark hocche - aar dark er jonno amra akta class / button add kore deteck korchi
+4. cva - class varient 
+
+
+
 
 - Fifth, application-specific components
 
