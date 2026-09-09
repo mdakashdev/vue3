@@ -38,13 +38,44 @@ library - shadcn/vue use korlam, sei jonno
 4. cva - class varient 
 
 
+## Fifth: Layout : application-এর structure।
+
+- sidebar, header, leftbar, etc
+
+1. first figma / sketch layout theke dekhbo amader ki ki lagbe - 
+2. ami dekhe pelam - leftbar/sidbar, header / top bar, main content area; tar mane 3 ta lagche 
+3. then amader `1. layout structure` lagbe  - follow @doc/design-system/application-layout.md
+4. then layout-এর `2. structural skeleton` korbo after that
+5. admin pages-এর parent layout think kore `nested routing kora`
+6. Figma design অনুযায়ী Sidebar-এর actual structure + sizing + spacing** তৈরি করব।
+
+> Basic things: 
+
+sketch theke layout ta ke dekhe identify korbo, main ki ki lagbe, dhorlam je - sidebar, header and content lagbe
+then sidebar er design & spacing ta dekhbo from desgin theke - `design theke size gulo dekhe then amra bosabo`
+
+tahole ei khetre o - first skeleton then design
+
+ja korlam - `আমাদের admin pages-এর parent layout হচ্ছে AppLayout.vue।`, so eitar jonno amader akta route lagbe aar ei admin layout er
+
+under ja page open hobe sob gulo, children theke. 
+
+- then each part er design dekhe dekhe class and design implement korbo 
+- like : main content - 
+- 1. dekhe mone holo caridike padding lagbe so, design theke paddin ber kore amra implement korbo, amader content page show kore 
+- 2. routerView a, so, sekhane akta div niye `p-6` class add kore dilam
+- 3. ami way ta bujlam, now ami AI use kore ei gulo ber korbo - 
+
+### using AI - get className or value
+
+
 
 
 - Fifth, application-specific components
-
-- Layout : application-এর structure।
 - Pages
 - Raw CSS কোথায় - component a
+
+
 
 ## Phase 1 — Figma Analysis
 ## Phase 2 — Design System

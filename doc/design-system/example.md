@@ -14,13 +14,7 @@ Users : User table
 Authentication: Login form
 
 
-STEP 4
-Base Components
-Button
-Input
-Card
-Badge
-↓
+
 STEP 5
 Layout
 Sidebar
@@ -213,8 +207,6 @@ src/styles/tokens.css -> এখানে আমাদের raw design tokens �
 @theme {}
 ```
 eivabe theme ereate korbo
-
-
 
 
 # Step1 - Design language
