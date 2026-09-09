@@ -24,6 +24,12 @@ src/
 
 ```
 
+
+1. structure banate hobe 
+2. skeleton banbo 
+3. 
+
+
 ## layout-এর structural skeleton
 
 হ্যাঁ — **কিন্তু এখনো আমরা পুরো visual design follow করছি না।** এটা খুব important distinction।

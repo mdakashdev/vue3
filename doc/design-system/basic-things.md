@@ -66,6 +66,14 @@ under ja page open hobe sob gulo, children theke.
 - 2. routerView a, so, sekhane akta div niye `p-6` class add kore dilam
 - 3. ami way ta bujlam, now ami AI use kore ei gulo ber korbo - 
 
+way 2 ta : 
+- Design dekhe component banabo & design korbo.
+- ai diye korate pari. 
+- 2 way tei jante hobe, component ki ki hobe, architecuture ki hobe, then development kora suru korte hobe.
+
+
+
+
 ### using AI - get className or value
 
 
