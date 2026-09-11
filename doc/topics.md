@@ -1,16 +1,15 @@
+# Time
 ----- 3M 20/14 days
 1. October - (31)
 2. November - (30)
 3. December -  (31)
 
 
+Project - 20days; 
+        - 13 days (til September 30)
+        - 07 days (Oct - 1,2,5,6,7,8,9)
 
-Project - 13 Days (til september 30)
-
-[Sketch -> Project Create -> Build -> Live -> Test case]
-
-* 1 Oct --> start typescript
-
+---
 
 # Topics
 1. Build App
@@ -25,11 +24,30 @@ Project - 13 Days (til september 30)
 10. Life Cycle - pending
 11. Form validation - pending
 
+---
+
+# Project plan - 20days
+
+- Target: 30
+
+[Sketch -> Project Create -> Build -> Live -> Test case]
+
+* Vue - 12
+* React - 4
+* Angular - 4
 
 
-# Project plan
 
-
-
+---
 
 # TypeScript
+
+> start 12 october, 15 days
+
+Oct - 12,13,14,15,16 [17,18]
+    - 19,20,21,22,23 [24,25]
+    - 26,27,28,29,30 [31
+
+1. typescript 
+2. gap topics - ja project korte jeye bujte parbo.
+3. others
